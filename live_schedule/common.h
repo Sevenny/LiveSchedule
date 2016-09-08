@@ -53,22 +53,8 @@ struct LiveRequest
 
 
 CString UTF8ToUnicode(char* UTF8);
-string FormatTime(const char *format, struct tm *timeptr = NULL);
 string StringnizeTimeStamp(const time_t tm_stamp);
 time_t StampnizeTime(const CString &time_string);
-
-// 获取现在距离某个时间的秒数
-time_t GetTimeFromNowBySec(time_t tt);
-
-time_t GetTimeFromNowByDate(int year, int month, int day, int hour, int minute, int sec);
-
-time_t GetTimeByDate(int year, int month, int day, int hour, int minute, int sec);
-
-time_t GetTimeFromNow(struct tm* timeptr);
-
-time_t GetCurrentTimestamp();
-
-string GetCurrentTimeString();
 
 int splitString(string src, string sFlag, vector<string>& vecResult);
 

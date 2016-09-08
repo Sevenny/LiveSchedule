@@ -55,60 +55,6 @@ string StringnizeTimeStamp(const time_t tm_stamp)
 	return sTime;
 }
 
-
-time_t GetTimeFromNowBySec(time_t tt)
-{
-	time_t now = time(NULL);
-	return now - tt;
-}
-
-time_t GetTimeFromNowByDate(int year, int month, int day, int hour, int minute, int sec)
-{
-	struct tm date;
-	date.tm_year = year - 1900;
-	date.tm_mon = month;
-	date.tm_mday = day;
-	date.tm_hour = hour;
-	date.tm_min = minute;
-	date.tm_sec = sec;
-
-	return GetTimeFromNow(&date);
-}
-
-time_t GetTimeByDate(int year, int month, int day, int hour, int minute, int sec)
-{
-	struct tm date;
-	date.tm_year = year - 1900;
-	date.tm_mon = month - 1;
-	date.tm_mday = day;
-	date.tm_hour = hour;
-	date.tm_min = minute;
-	date.tm_sec = sec;
-
-	return mktime(&date);
-}
-
-// 获取现在距离某个时间的秒数 (负数 < now; 正数 > 0)
-time_t GetTimeFromNow(struct tm* timeptr)
-{
-	if (NULL == timeptr)
-	{
-		return 0;
-	}
-
-	time_t tt = mktime(timeptr);
-	time_t now = time(NULL);
-
-	return tt - now;
-}
-
-//获取系统当前时间戳
-time_t GetCurrentTimestamp()
-{
-	time_t currTimestamp = time(NULL);
-	return currTimestamp;
-}
-
 int splitString(string src, string sFlag, vector<string>& vecResult)
 {
 	int sFlagLen = sFlag.size();

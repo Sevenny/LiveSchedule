@@ -25,53 +25,62 @@ Clive_scheduleDlg::Clive_scheduleDlg(CWnd* pParent /*=NULL*/)
 void Clive_scheduleDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_EDIT1, m_eShow);
-	DDX_Control(pDX, IDC_EDIT_ERROR, m_eResult);
-	DDX_Control(pDX, IDC_EDIT_TIMESTART, m_eTimeStart);
-	DDX_Control(pDX, IDC_EDIT_TIMEEND, m_eTimeEnd);
-	DDX_Control(pDX, IDC_RADIO_CIDYES, m_rCidYes);
-	DDX_Control(pDX, IDC_RADIO_CIDNO, m_rCidNo);
-	DDX_Control(pDX, IDC_RADIO_FORWARD, m_rForward);
-	DDX_Control(pDX, IDC_EDIT_CATE, m_eCate);
-	DDX_Control(pDX, IDC_CHECK_ALL, m_cbAll);
-	DDX_Control(pDX, IDC_CHECK_SPORTS, m_cbSports);
-	DDX_Control(pDX, IDC_CHECK_CONCERT, m_cbConcert);
-	DDX_Control(pDX, IDC_CHECK_VARIETY, m_cbVariety);
-	DDX_Control(pDX, IDC_CHECK_NEWS, m_cbNews);
-	DDX_Control(pDX, IDC_CHECK_GAME, m_cbGame);
-	DDX_Control(pDX, IDC_CHECK_ENT, m_cbEnt);
-	DDX_Control(pDX, IDC_CHECK_TV, m_cbTv);
-	DDX_Control(pDX, IDC_CHECK_TECH, m_cbTech);
-	DDX_Control(pDX, IDC_CHECK_FINANCE, m_cbFinance);
-	DDX_Control(pDX, IDC_CHECK_AUTO, m_cbAuto);
-	DDX_Control(pDX, IDC_CHECK_LOCAL, m_cbLocal);
-	DDX_Control(pDX, IDC_CHECK_EDU, m_cbEdu);
-	DDX_Control(pDX, IDC_CHECK_STATUS_1, m_cbStatus1);
-	DDX_Control(pDX, IDC_CHECK_STATUS_2, m_cbStatus2);
-	DDX_Control(pDX, IDC_CHECK_STATUS_3, m_cbStatus3);
-	DDX_Control(pDX, IDC_EDIT_PAGESIZE, m_ePageSize);
-	DDX_Control(pDX, IDC_EDIT_PAGESTART, m_ePageStart);
-	DDX_Control(pDX, IDC_CHECK_VIP, m_cbVip);
-	DDX_Control(pDX, IDC_CHECK_FREE, m_cbFree);
-	DDX_Control(pDX, IDC_CHECK_TEST, m_cbTest);
-	DDX_Control(pDX, IDC_CHECK_VER_1_1, m_cbVer1_1);
-	DDX_Control(pDX, IDC_CHECK_ONTOP, m_cbOnTop);
+	DDX_Control(pDX, IDC_EDIT1,				m_eShow);
+	DDX_Control(pDX, IDC_EDIT_ERROR,		m_eResult);
+	DDX_Control(pDX, IDC_RADIO_CIDYES,		m_rCidYes);
+	DDX_Control(pDX, IDC_RADIO_CIDNO,		m_rCidNo);
+	DDX_Control(pDX, IDC_RADIO_FORWARD,		m_rForward);
+	DDX_Control(pDX, IDC_EDIT_CATE,			m_eCate);
+	DDX_Control(pDX, IDC_CHECK_ALL,			m_cbAll);
+	DDX_Control(pDX, IDC_CHECK_SPORTS,		m_cbSports);
+	DDX_Control(pDX, IDC_CHECK_CONCERT,		m_cbConcert);
+	DDX_Control(pDX, IDC_CHECK_VARIETY,		m_cbVariety);
+	DDX_Control(pDX, IDC_CHECK_NEWS,		m_cbNews);
+	DDX_Control(pDX, IDC_CHECK_GAME,		m_cbGame);
+	DDX_Control(pDX, IDC_CHECK_ENT,			m_cbEnt);
+	DDX_Control(pDX, IDC_CHECK_TV,			m_cbTv);
+	DDX_Control(pDX, IDC_CHECK_TECH,		m_cbTech);
+	DDX_Control(pDX, IDC_CHECK_FINANCE,		m_cbFinance);
+	DDX_Control(pDX, IDC_CHECK_AUTO,		m_cbAuto);
+	DDX_Control(pDX, IDC_CHECK_LOCAL,		m_cbLocal);
+	DDX_Control(pDX, IDC_CHECK_EDU,			m_cbEdu);
+	DDX_Control(pDX, IDC_CHECK_STATUS_1,	m_cbStatus1);
+	DDX_Control(pDX, IDC_CHECK_STATUS_2,	m_cbStatus2);
+	DDX_Control(pDX, IDC_CHECK_STATUS_3,	m_cbStatus3);
+	DDX_Control(pDX, IDC_EDIT_PAGESIZE,		m_ePageSize);
+	DDX_Control(pDX, IDC_EDIT_PAGESTART,	m_ePageStart);
+	DDX_Control(pDX, IDC_CHECK_VIP,			m_cbVip);
+	DDX_Control(pDX, IDC_CHECK_FREE,		m_cbFree);
+	DDX_Control(pDX, IDC_CHECK_TEST,		m_cbTest);
+	DDX_Control(pDX, IDC_CHECK_VER_1_1,		m_cbVer1_1);
+	DDX_Control(pDX, IDC_CHECK_ONTOP,		m_cbOnTop);
+	DDX_Control(pDX, IDC_DATETIMEPICKER2,	m_tStartDate);
+	DDX_Control(pDX, IDC_DATETIMEPICKER3,	m_tEndDate);
+	DDX_Control(pDX, IDC_CHECK_START,		m_cbStart);
+	DDX_Control(pDX, IDC_CHECK_END,			m_cbEnd);
 }
 
 BEGIN_MESSAGE_MAP(Clive_scheduleDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDOK, &Clive_scheduleDlg::OnBnClickedOk)
-	ON_BN_CLICKED(IDC_CHECK_ALL, &Clive_scheduleDlg::OnBnClickedCheckAll)
-	ON_BN_CLICKED(IDC_BTN_CLEAN, &Clive_scheduleDlg::OnBnClickedBtnClean)
-	ON_BN_CLICKED(IDC_BTN_NEXT, &Clive_scheduleDlg::OnBnClickedBtnNext)
-	ON_BN_CLICKED(IDC_BTN_LAST, &Clive_scheduleDlg::OnBnClickedBtnLast)
-	ON_BN_CLICKED(IDC_BTN_ABOUT, &Clive_scheduleDlg::OnBnClickedBtnAbout)
-	ON_BN_CLICKED(IDCANCEL, &Clive_scheduleDlg::OnBnClickedCancel)
-	ON_BN_CLICKED(IDC_CHECK_ONTOP, &Clive_scheduleDlg::OnBnClickedCheckOntop)
-	ON_BN_CLICKED(IDC_BTN_MIN, &Clive_scheduleDlg::OnBnClickedBtnMin)
+	ON_BN_CLICKED(IDOK,				&Clive_scheduleDlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_CHECK_ALL,	&Clive_scheduleDlg::OnBnClickedCheckAll)
+	ON_BN_CLICKED(IDC_BTN_CLEAN,	&Clive_scheduleDlg::OnBnClickedBtnClean)
+	ON_BN_CLICKED(IDC_BTN_NEXT,		&Clive_scheduleDlg::OnBnClickedBtnNext)
+	ON_BN_CLICKED(IDC_BTN_LAST,		&Clive_scheduleDlg::OnBnClickedBtnLast)
+	ON_BN_CLICKED(IDC_BTN_ABOUT,	&Clive_scheduleDlg::OnBnClickedBtnAbout)
+	ON_BN_CLICKED(IDCANCEL,			&Clive_scheduleDlg::OnBnClickedCancel)
+	ON_BN_CLICKED(IDC_CHECK_ONTOP,	&Clive_scheduleDlg::OnBnClickedCheckOntop)
+	ON_BN_CLICKED(IDC_BTN_MIN,		&Clive_scheduleDlg::OnBnClickedBtnMin)
 END_MESSAGE_MAP()
 
+
+BOOL Clive_scheduleDlg::PreTranslateMessage(MSG* pMsg)
+{
+	if (pMsg->message == WM_MOUSEMOVE)
+		m_Mytip.RelayEvent(pMsg);
+	return CDialog::PreTranslateMessage(pMsg);
+}
 
 // Clive_scheduleDlg 消息处理程序
 
@@ -95,18 +104,35 @@ BOOL Clive_scheduleDlg::OnInitDialog()
 	m_cbStatus2.SetCheck(1);
 	m_cbStatus3.SetCheck(1);
 	m_cbAll.SetCheck(1);
+	m_cbOnTop.SetCheck(1);
 
-	m_eTimeStart.SetWindowTextW(L"1970-01-01 08:00:00");
-	m_eTimeEnd.SetWindowTextW(L"1970-01-01 08:00:00");
 	m_ePageSize.SetWindowTextW(L"20");
 	m_ePageStart.SetWindowTextW(L"0");
 	m_eCate.SetWindowTextW(L"all");
 
 	m_eShow.SetSel(-1);
-
 	m_csDomain = _T(VIDEO_DOMAIN);
-
 	m_eShow.SetReadOnly();
+
+	m_tStartDate.SetFormat(L"yyyy-MM-dd HH:mm:ss");
+	m_tEndDate.SetFormat(L"yyyy-MM-dd HH:mm:ss");
+	COleDateTime oleDate;
+	m_tStartDate.GetTime(oleDate);
+	oleDate.SetDateTime(oleDate.GetYear(), oleDate.GetMonth(), oleDate.GetDay(), 0, 0, 0);
+	m_tStartDate.SetTime(oleDate);
+
+	oleDate.SetDateTime(oleDate.GetYear(), oleDate.GetMonth(), oleDate.GetDay(), 23, 59, 59);
+	m_tEndDate.SetTime(oleDate);
+
+
+	m_Mytip.Create(this);
+	m_Mytip.AddTool(GetDlgItem(IDC_CHECK_START), L"默认不设置开始时间，如需要请勾选"); 
+	m_Mytip.AddTool(GetDlgItem(IDC_CHECK_END),	 L"默认不设置结束时间，如需要请勾选");
+	m_Mytip.AddTool(GetDlgItem(IDC_EDIT_CATE),	 L"小类别的填写请查看帮助？");
+	m_Mytip.SetDelayTime(200);					//设置延迟
+	m_Mytip.SetTipTextColor(RGB(0, 0, 255));	//设置提示文本的颜色
+	m_Mytip.SetTipBkColor(RGB(255, 255, 255));	//设置提示框的背景颜色
+	m_Mytip.Activate(TRUE);						//设置是否启用提示
 
 	//AllocConsole();
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
@@ -154,17 +180,37 @@ void Clive_scheduleDlg::GetItemValue(LiveRequest &req)
 	m_stReq.clear();
 	m_csDomain = _T(VIDEO_DOMAIN);
 
-	m_eTimeStart.GetWindowTextW(m_stReq.csTimeStart);
-	time_t iTimeStart = StampnizeTime(m_stReq.csTimeStart);
-	CString csTimeStart;
-	csTimeStart.Format(L"%ld", iTimeStart);
-	m_stReq.csTimeStart = csTimeStart;
+	//开始时间
+	if (m_cbStart.GetCheck() == BST_CHECKED)
+	{
+		CString csTimeStart = L"";
+		m_tStartDate.GetTime(m_ctTimeStart);
+		csTimeStart.Format(L"%d-%d-%d %02d:%02d:%02d", m_ctTimeStart.GetYear(), m_ctTimeStart.GetMonth(), m_ctTimeStart.GetDay(),
+			m_ctTimeStart.GetHour(), m_ctTimeStart.GetMinute(), m_ctTimeStart.GetSecond());
 
-	m_eTimeEnd.GetWindowTextW(m_stReq.csTimeEnd);
-	time_t iTimeEnd = StampnizeTime(m_stReq.csTimeEnd);
-	CString csTimeEnd;
-	csTimeEnd.Format(L"%ld", iTimeEnd);
-	m_stReq.csTimeEnd = csTimeEnd;
+		time_t iTimeStart = StampnizeTime(csTimeStart);
+		csTimeStart = L"";
+		csTimeStart.Format(L"%ld", iTimeStart);
+		m_stReq.csTimeStart = csTimeStart;
+	}
+	else
+		m_stReq.csTimeStart = L"0";
+
+	//结束时间
+	if (m_cbEnd.GetCheck() == BST_CHECKED)
+	{
+		CString csTimeEnd = L"";
+		m_tEndDate.GetTime(m_ctTimeEnd);
+		csTimeEnd.Format(L"%d-%d-%d %02d:%02d:%02d", m_ctTimeEnd.GetYear(), m_ctTimeEnd.GetMonth(), m_ctTimeEnd.GetDay(),
+			m_ctTimeEnd.GetHour(), m_ctTimeEnd.GetMinute(), m_ctTimeEnd.GetSecond());
+
+		time_t iTimeEnd = StampnizeTime(csTimeEnd);
+		csTimeEnd = L"";
+		csTimeEnd.Format(L"%ld", iTimeEnd);
+		m_stReq.csTimeEnd = csTimeEnd;
+	}
+	else
+		m_stReq.csTimeEnd = L"0";
 
 	m_ePageSize.GetWindowTextW(m_stReq.csPageSize);
 
@@ -250,23 +296,24 @@ void Clive_scheduleDlg::OnBnClickedOk()
 	btn->EnableWindow();
 }
 
-
+//获取节目列表并且解析输出
 int Clive_scheduleDlg::GetLiveSchedule(const LiveRequest req)
 {
+	m_eShow.SetWindowTextW(L"");
 	CString csUrl;
 	string strTimeStart = StringnizeTimeStamp((int)_ttoi(req.csTimeStart));
 	CString csTimeStart;
 	csTimeStart = strTimeStart.c_str();
-	m_eShow.ReplaceSel(L"开始时间 : " + csTimeStart + L"\r\n");
-	m_eShow.ReplaceSel(L"结束时间 : " + req.csTimeEnd + L"\r\n");
-	m_eShow.ReplaceSel(L"每页数量 : " + req.csPageSize + L"\r\n");
-	m_eShow.ReplaceSel(L"翻页起点 : " + req.csPageStart + L"\r\n");
-	m_eShow.ReplaceSel(L"翻页类型 : " + req.csPageType + L"\r\n");
-	m_eShow.ReplaceSel(L"大  类 别 : " + req.csSite + L"\r\n");
-	m_eShow.ReplaceSel(L"小  类 别 : " + req.csCate + L"\r\n");
-	m_eShow.ReplaceSel(L"直播状态 : " + req.csStatus + L"\r\n");
-	m_eShow.ReplaceSel(L"付费状态 : " + req.csPay + L"\r\n");
-	m_eShow.ReplaceSel(L"过滤Cid   : " + m_stReq.csCid + L"\r\n");
+	m_eShow.ReplaceSel(L"开始时间 : "	+ csTimeStart		+ L"\r\n");
+	m_eShow.ReplaceSel(L"结束时间 : "	+ req.csTimeEnd		+ L"\r\n");
+	m_eShow.ReplaceSel(L"每页数量 : "	+ req.csPageSize	+ L"\r\n");
+	m_eShow.ReplaceSel(L"翻页起点 : "	+ req.csPageStart	+ L"\r\n");
+	m_eShow.ReplaceSel(L"翻页类型 : "	+ req.csPageType	+ L"\r\n");
+	m_eShow.ReplaceSel(L"大  类 别 : "	+ req.csSite		+ L"\r\n");
+	m_eShow.ReplaceSel(L"小  类 别 : "	+ req.csCate		+ L"\r\n");
+	m_eShow.ReplaceSel(L"直播状态 : "	+ req.csStatus		+ L"\r\n");
+	m_eShow.ReplaceSel(L"付费状态 : "	+ req.csPay			+ L"\r\n");
+	m_eShow.ReplaceSel(L"过滤Cid   : "	+ m_stReq.csCid		+ L"\r\n");
 	csUrl.Format(m_csArgs, req.csTimeStart, req.csCate, req.csTimeEnd, req.csSite, req.csPageType, req.csPageSize, req.csPageStart, req.csStatus, req.csCid, req.csPay);
 	csUrl.Append(_T(URL_QUA));
 	CInternetSession mysession;
@@ -301,20 +348,18 @@ int Clive_scheduleDlg::GetLiveSchedule(const LiveRequest req)
 		return -1;
 	}
 	m_stRsp.clear();
-	m_stRsp.finish = root["finish"].asInt();
-	m_stRsp.next_start = root["next_page_start"].asInt();
-	m_stRsp.req_num = root["req_num"].asInt();
-	m_stRsp.rsp_num = root["rsp_num"].asInt();
+	m_stRsp.finish		= root["finish"].asInt();
+	m_stRsp.next_start	= root["next_page_start"].asInt();
+	m_stRsp.req_num		= root["req_num"].asInt();
+	m_stRsp.rsp_num		= root["rsp_num"].asInt();
 
-	std::string strMsg = root["result"]["msg"].asString();
-	int code = root["result"]["ret"].asInt();
-	strTemp = strMsg.c_str();
+	std::string strMsg	= root["result"]["msg"].asString();
+	int code			= root["result"]["ret"].asInt();
+	strTemp				= strMsg.c_str();
 	CString csErrMsg;
-	csErrMsg.Format(L"Ret:%d | Next:%d Cost:%dms | Msg:", code, m_stRsp.next_start, root["result"]["cost_time"].asInt());
+	csErrMsg.Format(L"Ret:%d | Next:%d | Cost:%dms | Msg:", code, m_stRsp.next_start, root["result"]["cost_time"].asInt());
 	csErrMsg.Append(strTemp);
 	m_eResult.SetWindowTextW(csErrMsg);
-	csErrMsg.Format(L"%d", m_stRsp.next_start);
-	m_ePageStart.SetWindowTextW(csErrMsg);
 	Json::Value stLives = root["data"]["lives"];
 	
 
@@ -328,7 +373,7 @@ int Clive_scheduleDlg::GetLiveSchedule(const LiveRequest req)
 		std::string strPid, strType, strTitle, strStart, strEnd;
 		CString csPid, csType, csTitle, csStart, csEnd, csIndex;
 		csIndex.Format(L"%d", i+1);
-		//m_eShow.ReplaceSel(L"| " + csIndex + L"\t| ");
+
 		csLiveShow.Append(L"| " + csIndex + L"\t| ");
 		if (!Live["pid"].empty() && Live["pid"].isString())
 		{

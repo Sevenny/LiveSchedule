@@ -14,7 +14,7 @@
 #include "common.h"
 #include "live_scheduleDlg.h"
 
-#pragma comment(lib, "lib_json.lib")
+#pragma comment(lib, "lib_json_r.lib")
 
 
 class Clive_scheduleApp : public CWinApp
