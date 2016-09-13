@@ -39,7 +39,8 @@ Clive_scheduleApp theApp;
 
 BOOL Clive_scheduleApp::InitInstance()
 {
-
+//TODO: call AfxInitRichEdit2() to initialize richedit2 library.
+	AfxInitRichEdit2();
 	INITCOMMONCONTROLSEX InitCtrls;
 	InitCtrls.dwSize = sizeof(InitCtrls);
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
@@ -86,6 +87,7 @@ BOOL Clive_scheduleApp::InitInstance()
 	{
 		delete pShellManager;
 	}
+
 
 	// 由于对话框已关闭，所以将返回 FALSE 以便退出应用程序，
 	//  而不是启动应用程序的消息泵。

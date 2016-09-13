@@ -7,7 +7,8 @@
 #include "live_schedule.h"
 #include "LiveAbout.h"
 #include "afxdtctl.h"
-
+#include "afxcmn.h"
+#include <wchar.h>
 
 // Clive_scheduleDlg 对话框
 class Clive_scheduleDlg : public CDialogEx
@@ -42,11 +43,36 @@ protected:
 	afx_msg void	OnBnClickedCancel();
 	afx_msg void	OnBnClickedCheckOntop();
 	afx_msg void	OnBnClickedBtnMin();
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnBnClickedCheckSports();
+	afx_msg void OnBnClickedCheckConcert();
+	afx_msg void OnBnClickedCheckVariety();
+	afx_msg void OnBnClickedCheckNews();
+	afx_msg void OnBnClickedCheckGame();
+	afx_msg void OnBnClickedCheckEnt();
+	afx_msg void OnBnClickedCheckTv();
+	afx_msg void OnBnClickedCheckTech();
+	afx_msg void OnBnClickedCheckFinance();
+	afx_msg void OnBnClickedCheckAuto();
+	afx_msg void OnBnClickedCheckLocal();
+	afx_msg void OnBnClickedCheckEdu();
+	afx_msg void OnBnClickedCheckHistory();
+	afx_msg void OnBnClickedCheckSchedule();
+	afx_msg void OnBnClickedCheckDomain2();
+	afx_msg void OnBnClickedCheckLiveinfo();
+	afx_msg void OnDtnDatetimechangeDatetimeEnd(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnBnClickedCheckVer11();
+	afx_msg void OnBnClickedCheckDomain();
 	DECLARE_MESSAGE_MAP()
 
 public:
-	int GetLiveSchedule(const LiveRequest req);
+	int GetLiveSchedule(const LiveRequest req);//从客厅读服务拉取节目单
 	void GetItemValue(LiveRequest &req);
+	void SetNowTime();
+	bool IsAllCheck();
+	int GetLiveFromServer(CString csType);//从直播平台拉取
+	int GetLiveInfo(CString csPid);
 
 	CString			m_csDomain;
 	CString			m_csArgs;
@@ -55,12 +81,13 @@ public:
 	LiveRequest		m_stReq;
 	LiveResponse	m_stRsp;
 	CToolTipCtrl    m_Mytip;
+	CBrush			m_brRed;
+	COLORREF		m_clRed;
+	CFont			m_font;
+	vector<CString> m_vecSite;
 
 public:
-	CEdit			m_eShow;
 	CEdit			m_eResult;
-	CButton			m_rCidYes;
-	CButton			m_rCidNo;
 	CButton			m_rForward;
 	CButton			m_rBackward;
 	CEdit			m_eCate;
@@ -87,9 +114,21 @@ public:
 	CButton			m_cbTest;
 	CButton			m_cbVer1_1;
 	CButton			m_cbOnTop;
-	
 	CDateTimeCtrl	m_tStartDate;
 	CDateTimeCtrl	m_tEndDate;
 	CButton			m_cbStart;
 	CButton			m_cbEnd;
+	CEdit			m_eTime;
+	CButton			m_cbDebug;
+	CButton			m_cbCid;
+	CEdit			m_eDomain;
+	CEdit			m_ePid;
+	CButton			m_cbHistory;
+	CButton			m_cbSchedule;
+	CButton			m_cbDomain;
+	CButton			m_cbShowTV;
+	CButton			m_cbPid;
+	CButton			m_btNext;
+	CButton			m_btLast;
+	CRichEditCtrl	m_reShow;
 };

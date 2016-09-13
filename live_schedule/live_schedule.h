@@ -16,7 +16,6 @@
 
 #pragma comment(lib, "lib_json_r.lib")
 
-
 class Clive_scheduleApp : public CWinApp
 {
 public:

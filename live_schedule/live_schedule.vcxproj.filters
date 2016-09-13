@@ -39,6 +39,27 @@
     <ClInclude Include="LiveAbout.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="json\autolink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\features.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\forwards.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\value.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="live_schedule.cpp">
@@ -56,6 +77,9 @@
     <ClCompile Include="LiveAbout.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ButtonCheckAction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="live_schedule.rc">
@@ -71,5 +95,20 @@
     <Image Include="res\live_schedule.ico">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="C:\Users\v_shkhuang\Pictures\mzl.nivvcnmr.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="C:\Users\v_shkhuang\Pictures\QQLive.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="C:\Users\v_shkhuang\Pictures\qqlive.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib_json_r.lib" />
   </ItemGroup>
 </Project>

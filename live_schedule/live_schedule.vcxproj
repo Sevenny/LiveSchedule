@@ -65,6 +65,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>直播节目单</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -127,7 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
+    <ClInclude Include="json\autolink.h" />
+    <ClInclude Include="json\config.h" />
+    <ClInclude Include="json\features.h" />
+    <ClInclude Include="json\forwards.h" />
+    <ClInclude Include="json\json.h" />
     <ClInclude Include="json\reader.h" />
+    <ClInclude Include="json\value.h" />
+    <ClInclude Include="json\writer.h" />
     <ClInclude Include="LiveAbout.h" />
     <ClInclude Include="live_schedule.h" />
     <ClInclude Include="live_scheduleDlg.h" />
@@ -136,6 +144,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ButtonCheckAction.cpp" />
     <ClCompile Include="common.cpp" />
     <ClCompile Include="LiveAbout.cpp" />
     <ClCompile Include="live_schedule.cpp" />
@@ -152,7 +161,14 @@
     <None Include="res\live_schedule.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\v_shkhuang\Pictures\mzl.nivvcnmr.png" />
+    <Image Include="C:\Users\v_shkhuang\Pictures\QQLive.bmp" />
+    <Image Include="C:\Users\v_shkhuang\Pictures\qqlive.ico" />
+    <Image Include="res\icon1.ico" />
     <Image Include="res\live_schedule.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib_json_r.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

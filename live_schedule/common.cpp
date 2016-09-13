@@ -42,7 +42,7 @@ time_t StampnizeTime(const CString &time_string)
 	tempTime.ParseDateTime(stime);
 	COleDateTimeSpan  result = tempTime - ct1970;
 
-	return result.GetTotalSeconds();
+	return (time_t)result.GetTotalSeconds();
 }
 
 string StringnizeTimeStamp(const time_t tm_stamp)
@@ -69,6 +69,24 @@ int splitString(string src, string sFlag, vector<string>& vecResult)
 	if (!lastString.empty())
 	{
 		vecResult.push_back(lastString);
+	}
+
+	return 0;
+}
+
+int SplitCString(CString strSource, vector<CString> &vecString)
+{
+	char *p;
+	CString csTmp;
+	char *pszTmp = (char*)strSource.GetBuffer(0);
+	csTmp = strtok_s(pszTmp, ",", &p);//(LPSTR)(LPCTSTR)½«CString×ªchar*
+	while (1)
+	{
+		csTmp = strtok_s(NULL, ",", &p);
+		if (csTmp == _T(""))
+			break;
+		csTmp.TrimLeft();
+		vecString.push_back(csTmp);
 	}
 
 	return 0;
